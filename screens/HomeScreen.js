@@ -9,34 +9,37 @@ export default class HomeScreen extends React.Component {
            <View>
                <TouchableOpacity 
                     style={{width:50,height:50,marginLeft:30}}
-                    
                     >
-                    <Text style={{alignItems:"center",justifyContent:"center"}}>
-                        "PFP"
-                    </Text>
+                     <Image
+                        source={require("../assets/settings.png")}
+                        style={styles.santaImage}
+                    />
                </TouchableOpacity>
                <TouchableOpacity 
                     style={{width:50,height:50,marginRight:30,marginTop:-50}}
                     
                     >
-                    <Text style={{alignItems:"center",justifyContent:"center"}}>
-                        "NOTIFICATION"
-                    </Text>
+                     <Image
+                        source={require("../assets/bell.png")}
+                        style={styles.santaImage}
+                    />
                </TouchableOpacity>
                <TouchableOpacity 
                     style={{width:150,height:100,marginLeft:100,marginTop:100}}
                     
                     >
-                    <Text style={{alignItems:"center",justifyContent:"center"}}>
-                        "ADVICE"
-                    </Text>
+                    <Image
+                        source={require("../assets/advice.png")}
+                        style={styles.santaImage}
+                    />
                </TouchableOpacity>
                <TouchableOpacity 
                     style={{width:50,height:50,marginLeft:200,marginTop:50,borderRadius:10}}
                     >
-                    <Text style={{alignItems:"center",justifyContent:"center"}}>
-                        "ADD TASK"
-                    </Text>
+                     <Image
+                        source={require("../assets/addTask.png")}
+                        style={styles.santaImage}
+                    />
                </TouchableOpacity>
            </View>
         ) 
