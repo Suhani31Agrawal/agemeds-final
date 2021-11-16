@@ -1,17 +1,22 @@
-import * as firebase from 'firebase';
 
-require('@firebase/firestore');
+  import firebase from 'firebase';
+require('@firebase/firestore')
 
+// Initialize Firebase
+import { initializeApp } from "firebase/app";
+
+const app = initializeApp(firebaseConfig);
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCllhi-k5wGKoViN8-CB_BSAav6UP2ExKo",
-    authDomain: "booksanta-ca6c9.firebaseapp.com",
-    projectId: "booksanta-ca6c9",
-    storageBucket: "booksanta-ca6c9.appspot.com",
-    messagingSenderId: "1456582798",
-    appId: "1:1456582798:web:a9c03b4c750e68ec7599df"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+  apiKey: "AIzaSyCSrKVAlwKnnOy8ii4XXZ4swryUxrrMnm0",
+  authDomain: "agemeds-d3c82.firebaseapp.com",
+  projectId: "agemeds-d3c82",
+  storageBucket: "agemeds-d3c82.appspot.com",
+  messagingSenderId: "292666394586",
+  appId: "1:292666394586:web:5126ad3c3378e5f2d1a2e3"
+};
 
-  export default firebase.firestore();
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
+export default firebase.firestore();

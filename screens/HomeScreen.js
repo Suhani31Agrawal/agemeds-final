@@ -4,6 +4,24 @@ import  * as  firebase from "firebase";
 import db from "../config"
 
 export default class HomeScreen extends React.Component {
+    constructor(){
+        super()
+        this.state={
+            medname:"",
+            time:"",
+        }
+    }
+    addReminder=()=>{
+        db.collection("reminder").add({
+            "medicineName":this.state.medname,
+            "Time":this.state.time
+        })
+        Alert.alert("REMINDER ADDED SUCCESSFULLY")
+        this.setState({
+            medname:"",
+            time:""
+        })
+    }
     render(){
         return(
            <View>
@@ -40,17 +58,53 @@ export default class HomeScreen extends React.Component {
                         style={styles.santaImage}
                     />
                </TouchableOpacity>
+               <TextInput
+                    onChangeText={text=>this.setState({
+                        medname:text
+                    })}
+                    style={styles.inputField}
+                    placeholder='Medicine'
+                    value={this.state.medname}
+                 />
+                 <TextInput
+                    onChangeText={text=>this.setState({
+                       time:text
+                    })}
+                    style={styles.inputField}
+                    placeholder='Time'
+                    value={this.state.time}
+                />
                <TouchableOpacity 
                     style={{width:50,height:50,marginLeft:200,marginTop:50,borderRadius:10}}
+                    onPress={()=>{
+                        this.addReminder()
+                    }}
                     >
                      <Image
                         source={require("../assets/addTask.png")}
                         style={styles.santaImage}
                     />
                </TouchableOpacity>
+               <View style={{marginTop:50,justifyContent:"center",alignItems:"center"}}>
+                   <Text>{this.state.medname}</Text>
+                   <Text>{this.state.time}</Text>
+               </View>
            </View>
         ) 
     }
 }
 
-
+const styles=StyleSheet.create({
+      santaImage:{
+        width: "70%",
+        height: "100%",
+        resizeMode: "stretch",
+        marginTop:30
+      },
+      inputField:{
+        width:150,
+        height:40,
+        borderWidth:1.5,
+        fontSize:20
+      },
+})
