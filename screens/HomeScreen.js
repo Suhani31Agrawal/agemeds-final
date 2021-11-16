@@ -9,6 +9,9 @@ export default class HomeScreen extends React.Component {
            <View>
                <TouchableOpacity 
                     style={{width:50,height:50,marginLeft:30}}
+                    onPress ={()=>{
+                        this.props.navigation.navigate("SettingScreen")
+                      }}
                     >
                      <Image
                         source={require("../assets/settings.png")}
@@ -17,7 +20,9 @@ export default class HomeScreen extends React.Component {
                </TouchableOpacity>
                <TouchableOpacity 
                     style={{width:50,height:50,marginRight:30,marginTop:-50}}
-                    
+                    onPress ={()=>{
+                        this.props.navigation.navigate("NotificationScreen")
+                      }}
                     >
                      <Image
                         source={require("../assets/bell.png")}
@@ -26,7 +31,9 @@ export default class HomeScreen extends React.Component {
                </TouchableOpacity>
                <TouchableOpacity 
                     style={{width:150,height:100,marginLeft:100,marginTop:100}}
-                    
+                    onPress ={()=>{
+                        this.props.navigation.navigate("AdviceScreen")
+                      }}
                     >
                     <Image
                         source={require("../assets/advice.png")}
